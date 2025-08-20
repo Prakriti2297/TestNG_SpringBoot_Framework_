@@ -1,0 +1,28 @@
+2025-08-18T23:42:24.753+05:30  INFO 11812 --- [demo] [main] com.example.tests.LoginTest              : Starting LoginTest using Java 17.0.9 with PID 11812 (D:\SpringBootPractice\demo\target\test-classes started by PRAKRITI in D:\SpringBootPractice\demo)
+2025-08-18T23:42:24.755+05:30 DEBUG 11812 --- [demo] [main] com.example.tests.LoginTest              : Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-08-18T23:42:24.756+05:30  INFO 11812 --- [demo] [main] com.example.tests.LoginTest              : No active profile set, falling back to 1 default profile: "default"
+2025-08-18T23:42:28.537+05:30  INFO 11812 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 139.0.7258.68 (resolved driver for Chrome 139)
+2025-08-18T23:42:28.583+05:30  INFO 11812 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\PRAKRITI\.cache\selenium\chromedriver\win64\139.0.7258.68\chromedriver.exe
+2025-08-18T23:42:31.751+05:30  WARN 11812 --- [demo] [main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find an exact match for CDP version 139, returning the closest version; found: 135; Please update to a Selenium version that supports CDP version 139
+2025-08-18T23:42:32.248+05:30  INFO 11812 --- [demo] [main] com.example.tests.LoginTest              : Started LoginTest in 8.286 seconds (process running for 11.5)
+2025-08-18T23:46:08.335+05:30  INFO 19468 --- [demo] [main] com.example.SpringBootMain               : Starting SpringBootMain using Java 17.0.9 with PID 19468 (D:\SpringBootPractice\demo\target\test-classes started by PRAKRITI in D:\SpringBootPractice\demo)
+2025-08-18T23:46:08.409+05:30 DEBUG 19468 --- [demo] [main] com.example.SpringBootMain               : Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-08-18T23:46:08.452+05:30  INFO 19468 --- [demo] [main] com.example.SpringBootMain               : No active profile set, falling back to 1 default profile: "default"
+2025-08-18T23:47:25.415+05:30  INFO 19468 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 139.0.7258.68 (resolved driver for Chrome 139)
+2025-08-18T23:47:26.637+05:30  INFO 19468 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\PRAKRITI\.cache\selenium\chromedriver\win64\139.0.7258.68\chromedriver.exe
+2025-08-18T23:47:38.056+05:30  WARN 19468 --- [demo] [main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find an exact match for CDP version 139, returning the closest version; found: 135; Please update to a Selenium version that supports CDP version 139
+2025-08-18T23:47:52.100+05:30  INFO 19468 --- [demo] [main] com.example.SpringBootMain               : Started SpringBootMain in 129.229 seconds (process running for 163.16)
+2025-08-18T23:49:36.225+05:30  WARN 19468 --- [demo] [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'close' on bean with name 'webDriver' propagated an exception: org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [093d71bbe4efef3ed38d36a4ecbdb84e, close {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.128, chrome: {chromedriverVersion: 139.0.7258.68 (40ff94600b6e..., userDataDir: C:\Users\PRAKRITI\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49310}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49310/devtoo..., se:cdpVersion: 139.0.7258.128, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 093d71bbe4efef3ed38d36a4ecbdb84e
+2025-08-18T23:49:56.048+05:30  INFO 9640 --- [demo] [main] com.example.tests.LoginTest              : Starting LoginTest using Java 17.0.9 with PID 9640 (D:\SpringBootPractice\demo\target\test-classes started by PRAKRITI in D:\SpringBootPractice\demo)
+2025-08-18T23:49:56.050+05:30 DEBUG 9640 --- [demo] [main] com.example.tests.LoginTest              : Running with Spring Boot v3.5.4, Spring v6.2.9
+2025-08-18T23:49:56.051+05:30  INFO 9640 --- [demo] [main] com.example.tests.LoginTest              : No active profile set, falling back to 1 default profile: "default"
+2025-08-18T23:49:57.820+05:30  INFO 9640 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Using chromedriver 139.0.7258.68 (resolved driver for Chrome 139)
+2025-08-18T23:49:57.862+05:30  INFO 9640 --- [demo] [main] i.g.bonigarcia.wdm.WebDriverManager      : Exporting webdriver.chrome.driver as C:\Users\PRAKRITI\.cache\selenium\chromedriver\win64\139.0.7258.68\chromedriver.exe
+2025-08-18T23:49:59.620+05:30  WARN 9640 --- [demo] [main] o.o.selenium.devtools.CdpVersionFinder   : Unable to find an exact match for CDP version 139, returning the closest version; found: 135; Please update to a Selenium version that supports CDP version 139
+2025-08-18T23:49:59.936+05:30  INFO 9640 --- [demo] [main] com.example.tests.LoginTest              : Started LoginTest in 4.475 seconds (process running for 6.955)
