@@ -43,6 +43,14 @@ public class LoginPage extends BasePage {
 
     @FindBy(xpath="//div[@id='QuickLinks']//a[contains(@href,'FISH')]")
     private WebElement Fish_QuickLink; 
+     @FindBy(xpath="//div[@id='QuickLinks']//a[contains(@href,'DOGS')]")
+    private WebElement Dog_QuickLink; 
+     @FindBy(xpath="//div[@id='QuickLinks']//a[contains(@href,'REPTILES')]")
+    private WebElement Reptiles_QuickLink; 
+     @FindBy(xpath="//div[@id='QuickLinks']//a[contains(@href,'CATS')]")
+    private WebElement cat_QuickLink; 
+     @FindBy(xpath="//div[@id='QuickLinks']//a[contains(@href,'BIRDS')]")
+    private WebElement Bird_QuickLink; 
 
     public void navigateToLoginPage() {
         System.out.println("Navigating to Login Page: " + config.getBaseUrl());
@@ -56,6 +64,22 @@ public class LoginPage extends BasePage {
             case "FISH":
                 Fish_QuickLink.click();
                 logger.info("Clicked on Fish Quick Link");
+                break;
+                case "DOGS":
+                Dog_QuickLink.click();
+                logger.info("Clicked on Dogs Quick Link");
+                break;
+                 case "REPTILES":
+                Reptiles_QuickLink.click();
+                logger.info("Clicked on Dogs Quick Link");
+                break;
+                 case "CATS":
+                cat_QuickLink.click();
+                logger.info("Clicked on Dogs Quick Link");
+                break;
+                 case "BIRDS":
+                Bird_QuickLink.click();
+                logger.info("Clicked on Dogs Quick Link");
                 break;
             default:
                 logger.warn("Quick link not found: " + linkName);

@@ -25,10 +25,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope("prototype")  
-public class FishCatalog extends BasePage {
+public class CatalogPage extends BasePage {
     
      @Autowired
-    public FishCatalog(WebDriver driver) {
+    public CatalogPage(WebDriver driver) {
         super(driver);
     }
  private static final Logger logger = LoggerFactory.getLogger(LoginPage.class);

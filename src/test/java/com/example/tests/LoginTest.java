@@ -17,19 +17,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.beust.ah.A;
-import com.example.Pages.FishCatalog;
-import com.example.Pages.Fish_ProductDetails;
+import com.example.Pages.CatalogPage;
+import com.example.Pages.ProductDetailsPage;
 import com.example.Pages.LoginPage;
 import com.example.demo.AppConfig;
 import com.example.demo.ExcelDataLoader;
@@ -46,10 +39,10 @@ public class LoginTest extends AbstractTestNGSpringContextTests {
     private LoginPage loginPage;
 
     @Autowired
-    private FishCatalog fishCatalog;
+    private CatalogPage catalog;
 
     @Autowired
-    private Fish_ProductDetails fishProductDetails;
+    private ProductDetailsPage productDetails;
    
     
 
@@ -67,6 +60,10 @@ public class LoginTest extends AbstractTestNGSpringContextTests {
     public Object[][] getFishData() {
         return toDataProvider(ExcelDataLoader.loadData("Product_data.xlsx", "Product", "Fish"));
     }
+    @DataProvider(name = "DogData")
+    public Object[][] getDogData() {
+        return toDataProvider(ExcelDataLoader.loadData("Product_data.xlsx", "Product", "Dogs"));
+    }
     private Object[][] toDataProvider(List<Map<String, String>> list) {
         Object[][] result = new Object[list.size()][1];
         for (int i = 0; i < list.size(); i++) {
@@ -81,12 +78,13 @@ public class LoginTest extends AbstractTestNGSpringContextTests {
             loginPage.accessQuickLinks(data.get("LinkName"));
             Thread.sleep(2000); // Wait for 2 seconds to see the page load
             logger.info("Fish page navigated successfully.");
-            String product_id=fishCatalog.clickFishProduct(data.get("ProductName"));
-            fishProductDetails.verifyProductDetails(product_id);
-            String price = fishProductDetails.getPrice(data.get("ItemId"));
+            String product_id=catalog.clickFishProduct(data.get("ProductName"));
+            productDetails.verifyProductDetails(product_id);
+            String price = productDetails.getPrice(data.get("ItemId"));
             logger.info("Price of the product: " + price);
-            fishProductDetails.addToCart(data.get("ItemId"));
-            logger.info("Product added to cart successfully.");     
+            productDetails.addToCart(data.get("ItemId"));
+            logger.info("Product added to cart successfully.");
+             productDetails.verifyCart(data.get("ItemId"),price);    
         
     }
 
@@ -96,11 +94,26 @@ public class LoginTest extends AbstractTestNGSpringContextTests {
         loginPage.accessQuickLinks(data.get("LinkName"));
             Thread.sleep(2000); // Wait for 2 seconds to see the page load
             logger.info("Fish page navigated successfully.");
-            fishCatalog.navigateToHomePage();
+            catalog.navigateToHomePage();
             logger.info("Returned to home page successfully.");
 
     }
-    
+     @Test(priority = 3,dataProvider = "DogData",groups = {"smoke","regression"})
+    public void addDogsToCart(Map<String, String> data) throws InterruptedException {
+        // Navigate to the login page
+           loginPage.navigateToLoginPage();
+            loginPage.accessQuickLinks(data.get("LinkName"));
+            Thread.sleep(2000); // Wait for 2 seconds to see the page load
+            logger.info(data.get("LinkName")+data.get("LinkName")+" page navigated successfully.");
+            String product_id=catalog.clickFishProduct(data.get("ProductName"));
+            productDetails.verifyProductDetails(product_id);
+            String price = productDetails.getPrice(data.get("ItemId"));
+            logger.info("Price of the product: " + price);
+            productDetails.addToCart(data.get("ItemId"));
+            logger.info("Product added to cart successfully.");
+             productDetails.verifyCart(data.get("ItemId"),price);    
+        
+    }
 
 
 
